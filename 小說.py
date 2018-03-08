@@ -19,10 +19,9 @@ def ListTheRow (url):
 				LikeMost.append(member)
 		except :
 			continue
-	try :
-		nextPage = respond.find('a','nxt').get('href')
-	except :
-		continue
+	
+	nextPage = respond.find('a','nxt').get('href')
+
 	return LikeMost, nextPage
 
 def NewPage(PageNumber):
@@ -35,7 +34,7 @@ def NewPage(PageNumber):
 	return allPosts
 
 if __name__ == '__main__':
-	pages = 38
+	pages = 10
 	for Page in range(1,pages+1):
 		print ('第',Page,'頁：')
 		for post in NewPage(Page):
