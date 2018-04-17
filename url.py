@@ -1,5 +1,5 @@
 import requests 
-from time import time 
+import time
 from bs4 import BeautifulSoup
 
 url = input ('please type in the url.')
@@ -15,9 +15,9 @@ for text in soup:
 	for trans in EC:
 		translate.append(trans.getText())
 
-
-time = str(time())+'.txt'
-time2 = 'both'+time
+localtime = time.asctime( time.localtime(time.time()) )
+time = localtime+'.txt'
+time2 = localtime+'_translate.txt'
 f = open(time, 'w', encoding = 'UTF-8')
 for sentance in english:
 	f.write(sentance+'\n\n')
